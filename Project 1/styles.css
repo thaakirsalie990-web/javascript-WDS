@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    gap: 1.7rem;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 2rem;
+
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.box input {
+    appearance: none;
+    border: 1px solid;
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.box input:focus {
+    outline: none;
+}
+
+button {
+    align-self: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: aquamarine;
+    transition: 0.4s;
+}

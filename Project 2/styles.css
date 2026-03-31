@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --acent-color: orangered;
+    --background-color: white;
+    --text-color: black;
+    --button-text: var(--background-color);
+    --transition: 1s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 30px;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+body.dark {
+    --acent-color: #D0D066;
+    --background-color: #333;
+    --text-color: white;
+    --button-text: #333;
+}
+
+.theme-swapper-btn {
+    color: var(--button-text);
+    background-color: var(--acent-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+    border: none;
+    border-radius: .3rem;
+    outline: none;
+    cursor: pointer;
+    transition: var(--transition);
+    transform: scale(1);
+}
+
+.theme-swapper-btn:hover,
+.theme-swapper-btn:focus {
+    transform: scale(1.1);
+}
+
+.icon {
+    fill: var(--background-color);
+    transition: var(--transition);
+}
+
+.sun-moon-container{
+    --rotation: 0;
+    position: absolute;
+    top:0;
+    height: 200vmin;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(calc(var(--rotation) * 1deg));
+    transition: transform var(--transition)
+}
+
+.sun, .moon {
+    position: absolute;
+    transition: opacity, fill, var(--transition);
+    width: 30px;
+    height: 30px;
+    fill: var(--acent-color);
+}
+
+.sun {
+    top: 5%;
+    opacity: 1;
+}
+
+.dark .sun {
+    opacity: 0;
+}
+
+.moon {
+    bottom: 5%;
+    opacity: 0;
+    transform: rotate(180deg);
+}
+
+.dark .moon {
+    opacity: 1;
+}
